@@ -1,0 +1,75 @@
+use worker;
+select*from worker;
+select department,count(department) from worker
+where department='hr';
+
+SELECT COUNT(department)
+FROM worker
+GROUP BY department
+ORDER BY COUNT(department) DESC
+LIMIT 1;
+
+select count(department),department 
+from worker
+group by department 
+having count(department) >2;
+
+SELECT * FROM (
+    SELECT department, COUNT(department ) AS dept_count
+    FROM worker
+    GROUP BY department
+) AS dept_summary
+WHERE dept_count > 2;
+
+
+select department,count(department) from worker
+group by department
+ORDER BY COUNT(department) DESC
+limit 1 offset 0;   #offset numbering from 0
+
+
+select department,first_name from worker where salary =(select max(salary) from worker);
+
+create table student(
+s_id int,
+s_name varchar(20));
+
+insert into student values(1,'pavan'),
+(2,'kumar'),
+(3,'babu'),
+(4,'raju'),
+(5,'asdfgh');
+
+delete from student where s_id=5;
+select*from student;
+
+create table address(
+s_id int,
+s_address varchar(20));
+insert into address values(1,'tuni'),
+(2,'vizag'),
+(3,'vellore'),
+(4,'kakinada'),
+(5,'hyderabad');
+
+select*from address;
+
+select *from 
+student cross join address;
+
+SELECT * from student INNER JOIN address where student.s_id=address.s_id;
+
+select*from student left outer join address on(student.s_id=address.s_id);
+
+select*from student right outer join address on(student.s_id=address.s_id);
+
+# for the full outer join use the union for the left and right 
+
+SELECT distinct salary
+FROM worker w1
+WHERE 4 = (
+    SELECT COUNT(distinct salary)
+    FROM worker w2
+    WHERE w2.salary > w1.salary
+);
+

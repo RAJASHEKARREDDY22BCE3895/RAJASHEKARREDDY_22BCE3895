@@ -1,0 +1,86 @@
+CREATE DATABASE pavan;
+USE pavan;
+CREATE TABLE vit (
+    s_id INT,
+    s_name VARCHAR(50),
+    s_marks INT,
+    s_address VARCHAR(40),
+    pincode INT
+);
+
+CREATE TABLE vit_ap (
+    si_id INT,
+    si_name VARCHAR(50),
+    si_marks INT,
+    si_address VARCHAR(40),
+    pincodes INT
+);
+
+CREATE TABLE vit_che (
+    sii_id INT,
+    sii_name VARCHAR(50),
+    sii_marks INT,
+    sii_address VARCHAR(40),
+    pincodess INT
+);
+
+select*from vit;
+select*from vit_ap;
+select*from vit_che;
+
+show tables from pavan;
+
+INSERT INTO vit (s_id, s_name, s_marks, s_address, pincode) VALUES
+(1, 'Rahul', 85, 'Hyderabad', 500001),
+(2, 'Sneha', 90, 'Mumbai', 400001),
+(3, 'Amit', 78, 'Chennai', 600001),
+(4, 'Priya', 88, 'Delhi', 110001),
+(5, 'Karan', 76, 'Bangalore', 560001),
+(6, 'Divya', 92, 'Pune', 411001),
+(7, 'Ravi', 81, 'Kolkata', 700001),
+(8, 'Neha', 87, 'Ahmedabad', 380001),
+(9, 'Arjun', 79, 'Jaipur', 302001),
+(10, 'Pooja', 93, 'Lucknow', 226001);
+
+INSERT INTO vit_ap (si_id, si_name, si_marks, si_address, pincodes) VALUES
+(1, 'Manoj', 84, 'Vizag', 530001),
+(2, 'Anjali', 91, 'Guntur', 522001),
+(3, 'Kiran', 77, 'Tirupati', 517501),
+(4, 'Meena', 89, 'Vijayawada', 520001),
+(5, 'Rakesh', 74, 'Nellore', 524001),
+(6, 'Aishwarya', 95, 'Rajahmundry', 533101),
+(7, 'Suresh', 80, 'Eluru', 534001),
+(8, 'Lavanya', 86, 'Kakinada', 533001),
+(9, 'Nikhil', 82, 'Anantapur', 515001),
+(10, 'Bhavana', 94, 'Kurnool', 518001);
+
+INSERT INTO vit_che (sii_id, sii_name, sii_marks, sii_address, pincodess) VALUES
+(1, 'Vinay', 83, 'Coimbatore', 641001),
+(2, 'Shruti', 92, 'Madurai', 625001),
+(3, 'Rohit', 79, 'Trichy', 620001),
+(4, 'Keerthi', 87, 'Salem', 636001),
+(5, 'Ajay', 75, 'Erode', 638001),
+(6, 'Pavithra', 96, 'Vellore', 632001),
+(7, 'Deepak', 82, 'Tirunelveli', 627001),
+(8, 'Meghana', 88, 'Thanjavur', 613001),
+(9, 'Harsha', 80, 'Karur', 639001),
+(10, 'Sanjana', 93, 'Namakkal', 637001);
+
+DESC VIT;
+
+ALTER TABLE VIT ADD(
+ S_SKILLS VARCHAR(40));
+ 
+ ALTER TABLE VIT DROP COLUMN S_SKILLS;
+ ALTER TABLE VIT ADD(
+ S_COUNTRY VARCHAR(20) DEFAULT 'INDIA');
+ 
+ ALTER TABLE VIT DROP COLUMN S_COUNTRY;
+ 
+ UPDATE VIT SET s_marks=90 WHERE s_id=1;
+ 
+ 
+ 
+ 
+ 
+ 

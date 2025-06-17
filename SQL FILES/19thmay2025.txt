@@ -1,0 +1,32 @@
+CREATE DATABASE VIT;
+USE VIT;
+CREATE TABLE Worker (
+	WORKER_ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	FIRST_NAME CHAR(25),
+	LAST_NAME CHAR(25),
+	SALARY INT,
+	JOINING_DATE DATETIME,
+	DEPARTMENT CHAR(25)
+);
+DROP TABLE WORKER;
+INSERT INTO Worker 
+    (FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPARTMENT) VALUES
+    ('Monika', 'Arora', 100000, '2014-02-20 09:00:00', 'HR'),
+    ('Niharika', 'Verma', 80000, '2014-06-11 09:00:00', 'Admin'),
+    ('Vishal', 'Singhal', 300000, '2014-02-20 09:00:00', 'HR'),
+    ('Amitabh', 'Singh', 500000, '2014-02-20 09:00:00', 'Admin'),
+    ('Vivek', 'Bhati', 500000, '2014-06-11 09:00:00', 'Admin'),
+    ('Vipul', 'Diwan', 200000, '2014-06-11 09:00:00', 'Account'),
+    ('Satish', 'Kumar', 75000, '2014-01-20 09:00:00', 'Account'),
+    ('Geetika', 'Chauhan', 90000, '2014-04-11 09:00:00', 'Admin');
+
+        
+SELECT*FROM WORKER; 
+
+SELECT FIRST_NAME,DEPARTMENT FROM WORKER WHERE SALARY>20000 AND DEPARTMENT='HR'; 
+
+SELECT LAST_NAME,DEPARTMENT FROM WORKER WHERE SALARY>200000 AND DEPARTMENT='ADMIN'; 
+
+select * from work er where salary>100000 and salary<300000 and department='Admin' or department='Account';
+
+select*from worker where (WORKER_ID % 2=0) AND (department in ("HR","Admin")) AND (salary =(Select MAX(salary) from worker));
